@@ -28,6 +28,7 @@ cd ~/ros2_ws
 Than, unzip this file into *src* file in your *ros2 workspace* dir.
 ```bash
 unzip <install_dir>/ROS2_CAKRA.zip -d ~/ros2_ws/src
+cp -a ~/ros2_ws/src/ROS2_CAKRA-master/. ~/ros2_ws/src/
 ```
 After that, build it with colcon.
 ```bash
