@@ -141,9 +141,10 @@ from cakra.NodeClient import NodeClient
 - you can nest this function.
 - you must set the ***goal_msg*** and return it in this function.
 - args is the state of the main node
-`final(self,result- 
-you can nest this function.
-- you can access the properties of results while using `resul.<property_name>`
+
+`final(self,result)`
+- you can nest this function.
+- you can access the properties of results while using `result.<property_name>`
 
 `check_dependencies(self,args=None)`
 - you can nest this function.
