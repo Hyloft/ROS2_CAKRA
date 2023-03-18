@@ -1,6 +1,6 @@
 # ROS2 CAKRA
 ## What is cakra?
-Cakra is basically the ros2 architecture written for a self-driving car named 'cakir'. <br>Cakra have 2 modules called ***MainNode*** and ***NodeClient***.<br>
+Cakra is basically the ros2 architecture written for a self-driving car named 'çaka'. <br>Cakra have 2 modules called ***MainNode*** and ***NodeClient***.<br>
 Main purpose of this architecture is using multiple server nodes asynchronously without any trouble.
 <br>
 
