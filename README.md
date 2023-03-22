@@ -1,4 +1,8 @@
 # ROS2 CAKRA
+<p align='center'>
+<img src='./cakra/image.png' width='550px'/>
+</p>
+
 ## What is cakra?
 Cakra is basically the ros2 architecture written for a self-driving car named 'çaka'. <br>Cakra have 2 modules called ***MainNode*** and ***NodeClient***.<br>
 Main purpose of this architecture is using multiple server nodes asynchronously without any trouble.
@@ -56,7 +60,7 @@ from cakra.MainNode import MainNode
 <br>
 `active_nodes` is the node names that can run and change something.
 <br>
-`_clients` is the dictinary list. The dictinaries are layouts of the clients.
+`node_clients` is the dictinary list. The dictinaries are layouts of the clients.
 <br>
 you have to define it in your new class as well.
 <br><br>
@@ -92,7 +96,7 @@ class ExampleMainNode(MainNode):
         self.example_client = ExampleNodeClient('name_of_client',self)
         
         # you must also create array of clients you created 
-        self._clients = [self.example_client]
+        self.node_clients = [self.example_client]
         
         # define the state
         self.state = {
@@ -171,7 +175,7 @@ class ExampleClient(NodeClient):
         self.main_node.state['example_number'] = result.new_number
 
     def set_goal_msg(self, goal_msg, args=None):
-        # set the goal message while using state. (args variable is the state)
+        # set the goal message while using state. (args variable is the current state)
         goal_msg.number=args['example_number']
         return goal_msg
 ```
