@@ -1,0 +1,5 @@
+string camera_image
+---
+bool is_log_completed
+---
+bool is_log_proceeded

@@ -9,7 +9,7 @@ class FibonacciMainNode(MainNode):
         super().__init__('fibonacci_action_client')
         self.decrease_client = DecreaseClient('decrease',self)
         self.fibonacci_client = FibonacciClient('fibonacci',self)
-        self._clients = [self.decrease_client,self.fibonacci_client]
+        self.all_nodes = [self.decrease_client,self.fibonacci_client]
         self.state = {
             'last_number':10
         }

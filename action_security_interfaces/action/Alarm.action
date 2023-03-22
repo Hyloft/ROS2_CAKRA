@@ -1,0 +1,5 @@
+bool is_secure
+---
+bool is_alarm_open
+---
+bool is_alarm_activated

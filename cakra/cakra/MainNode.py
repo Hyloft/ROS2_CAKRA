@@ -6,11 +6,11 @@ class MainNode(Node):
         super().__init__(name)
         self.active_nodes = active_nodes
         self.loop_nodes = loop_nodes
-        self._clients = []
+        self.all_clients = []
         
     def prepare(self):
-        self._clients = [_c.layout for _c in self._clients]
-        self.active_nodes = [c['name'] for c in self._clients] if self.active_nodes == None else self.active_nodes
+        self.all_clients = [_c.layout for _c in self.all_clients]
+        self.active_nodes = [c['name'] for c in self.all_clients] if self.active_nodes == None else self.active_nodes
         self.loop_nodes = [*self.active_nodes] if self.loop_nodes == None else self.loop_nodes
         
     def activate_node(self,name):
@@ -19,7 +19,7 @@ class MainNode(Node):
         """
 
 
-        client_names = [c['name'] for c in self._clients]
+        client_names = [c['name'] for c in self.all_clients]
         if name in client_names:
             self.active_nodes.append(name)
             self.active_nodes = [*set(self.active_nodes)]
@@ -34,7 +34,7 @@ class MainNode(Node):
         send node name and it will be deleted into next loop and set as deactive
         """
 
-        client_names = [c['name'] for c in self._clients]
+        client_names = [c['name'] for c in self.all_clients]
         if name in client_names and name in self.active_nodes:
             self.active_nodes = [n for n in self.active_nodes if n != name]
             self.loop_nodes = [n for n in self.active_nodes if n != name]
@@ -65,7 +65,7 @@ class MainNode(Node):
         if r == True:
             return
 
-        nodes_to_loop = [node for node in self._clients if node['name'] in self.loop_nodes]
+        nodes_to_loop = [node for node in self.all_clients if node['name'] in self.loop_nodes]
         
         for node_client in nodes_to_loop:
             node_client['client'].send_goal(self.state)

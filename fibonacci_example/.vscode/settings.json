@@ -1,0 +1,9 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/hyper/ros2_ws/install/fibonacci_example_interface/local/lib/python3.10/dist-packages",
+        "/home/hyper/ros2_ws/install/fibonacci_example/lib/python3.10/site-packages",
+        "/home/hyper/ros2_ws/install/cakra/lib/python3.10/site-packages",
+        "/opt/ros/rolling/lib/python3.10/site-packages",
+        "/opt/ros/rolling/local/lib/python3.10/dist-packages"
+    ]
+}

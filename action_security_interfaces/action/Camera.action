@@ -1,0 +1,5 @@
+string camera_image
+---
+bool is_secure
+---
+bool is_proceeded
